@@ -911,6 +911,16 @@ namespace JQSelenium
         }
 
         /// <summary>
+        ///   Search for a given element from among the matched elements.
+        ///   <para> http://api.jquery.com/index/ </para>
+        /// </summary>
+        /// <returns> An integer indicating the position of the first element within the jQuery object relative to its sibling elements. </returns>
+        public int Index()
+        {
+            return int.Parse(ExecJs("", ".index()").ToString());
+        }
+
+        /// <summary>
         /// Refreshes the list of JQueryTags by once again finding all the elements within 
         /// its specified selector
         /// </summary>
