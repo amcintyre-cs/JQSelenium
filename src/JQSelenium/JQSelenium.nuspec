@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>JQSelenium</id>
-    <version>1.7.1.0</version>
+    <version>1.7.2.0</version>
     <title>JQSelenium</title>
     <authors>Acklen Avenue / Communispace</authors>
     <owners>Acklen Avenue / Communispace</owners>
@@ -11,7 +11,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A C# wrapper of jQuery for Selenium WebDriver.</description>
     <releaseNotes>Moving to CSpace nuget repo</releaseNotes>
-    <copyright>Copyright 2013 Acklen Avenue, LLC. Modified by ajm 2014.</copyright>
+    <copyright>Copyright 2013 Acklen Avenue, LLC. Modified by ajm 2014-2015.</copyright>
     <tags>JQuery Selenium</tags>
     <dependencies>
       <dependency id="Selenium.WebDriver" version="2.33.0" />

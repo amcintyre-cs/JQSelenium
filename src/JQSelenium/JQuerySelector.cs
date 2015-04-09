@@ -340,7 +340,7 @@ namespace JQSelenium
         {
             object preResult = ExecJs("", ".children(" + selector + ")");
             List<IWebElement> webElements = ObjectToWebElementList(preResult);
-            return new JQuerySelector(selector + ".children()", webElements);
+            return new JQuerySelector(selector + ".children('" + selector + "')", webElements);
         }
 
         /// <summary>
@@ -557,7 +557,7 @@ namespace JQSelenium
         {
             object result = ExecJs("", ".closest('" + selector + "')");
             List<IWebElement> webElements = ObjectToWebElementList(result);
-            return new JQuerySelector(_selector + ".closest()", webElements);
+            return new JQuerySelector(_selector + ".closest('" + selector + "')", webElements);
         }
 
         /// <summary>
@@ -579,7 +579,7 @@ namespace JQSelenium
         {
             object result = ExecJs("", ".next('" + selector + "')");
             List<IWebElement> webElements = ObjectToWebElementList(result);
-            return new JQuerySelector(selector + ".next()", webElements);
+            return new JQuerySelector(selector + ".next('" + selector + "')", webElements);
         }
 
         /// <summary>
@@ -603,7 +603,7 @@ namespace JQSelenium
         {
             object preResult = ExecJs("", ".nextAll('" + selector + "')");
             List<IWebElement> webElements = ObjectToWebElementList(preResult);
-            return new JQuerySelector(_selector + ".nextAll()", webElements);
+            return new JQuerySelector(_selector + ".nextAll('" + selector + "')", webElements);
         }
 
         /// <summary>
@@ -614,7 +614,7 @@ namespace JQSelenium
         {
             object preResult = ExecJs("", ".nextUntil('" + selector + "')");
             List<IWebElement> webElements = ObjectToWebElementList(preResult);
-            return new JQuerySelector(_selector + ".nextUntil()", webElements);
+            return new JQuerySelector(_selector + ".nextUntil('" + selector + "')", webElements);
         }
 
         /// <summary>
@@ -697,11 +697,22 @@ namespace JQSelenium
         ///   Get the ancestors of each element in the current set of matched elements, optionally filtered by a selector.
         /// </summary>
         /// <returns> A JQuerySelector containing the parent of each element in the current set of elements. </returns>
+        public JQuerySelector Parents()
+        {
+            Object result = ExecJs("", ".parents()");
+            List<IWebElement> webElements = ObjectToWebElementList(result);
+            return new JQuerySelector(_selector + ".parents()", webElements);
+        }
+
+        /// <summary>
+        ///   Get the ancestors of each element in the current set of matched elements, optionally filtered by a selector.
+        /// </summary>
+        /// <returns> A JQuerySelector containing the parent of each element in the current set of elements. </returns>
         public JQuerySelector Parents(string selector)
         {
             Object result = ExecJs("", ".parents('" + selector + "')");
             List<IWebElement> webElements = ObjectToWebElementList(result);
-            return new JQuerySelector(_selector + ".parents()", webElements);
+            return new JQuerySelector(_selector + ".parents('" + selector + "')", webElements);
         }
 
         /// <summary>
@@ -712,7 +723,7 @@ namespace JQSelenium
         {
             Object result = ExecJs("", ".parentsUntil('" + selector + "')");
             List<IWebElement> webElements = ObjectToWebElementList(result);
-            return new JQuerySelector(_selector + ".parentsUntil()", webElements);
+            return new JQuerySelector(_selector + ".parentsUntil('" + selector + "')", webElements);
         }
 
         /// <summary>
@@ -734,7 +745,7 @@ namespace JQSelenium
         {
             object result = ExecJs("", ".prev('" + selector + "')");
             List<IWebElement> webElements = ObjectToWebElementList(result);
-            return new JQuerySelector(selector + ".prev()", webElements);
+            return new JQuerySelector(selector + ".prev('" + selector + "')", webElements);
         }
 
         /// <summary>
@@ -756,7 +767,7 @@ namespace JQSelenium
         {
             object preResult = ExecJs("", ".prevAll('" + selector + "')");
             List<IWebElement> webElements = ObjectToWebElementList(preResult);
-            return new JQuerySelector(_selector + ".prevAll()", webElements);
+            return new JQuerySelector(_selector + ".prevAll('" + selector + "')", webElements);
         }
 
         /// <summary>
@@ -767,7 +778,7 @@ namespace JQSelenium
         {
             object preResult = ExecJs("", ".prevUntil('" + selector + "')");
             List<IWebElement> webElements = ObjectToWebElementList(preResult);
-            return new JQuerySelector(_selector + ".prevUntil()", webElements);
+            return new JQuerySelector(_selector + ".prevUntil('" + selector + "')", webElements);
         }
 
         /// <summary>
@@ -833,7 +844,7 @@ namespace JQSelenium
         {
             object preResult = ExecJs("", ".siblings('" + selector + "')");
             List<IWebElement> webElements = ObjectToWebElementList(preResult);
-            return new JQuerySelector(_selector + ".siblings()", webElements);
+            return new JQuerySelector(_selector + ".siblings('" + selector + "')", webElements);
         }
 
         /// <summary>
